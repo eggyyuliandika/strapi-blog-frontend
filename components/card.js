@@ -2,20 +2,21 @@ import React from "react";
 import Link from "next/link";
 import Image from "./image";
 
-const Card = ({ article }) => {
+const Card = (props) => {
+  const {article} = props
   return (
-    <Link as={`/article/${article.slug}`} href="/article/[id]">
+    <Link as={`/article/${article?.attributes?.slug}`} href="/article/[id]">
       <a className="uk-link-reset">
         <div className="uk-card uk-card-muted">
           <div className="uk-card-media-top">
-            <Image image={article.image} />
+            <Image image={article?.attributes?.image?.data?.attributes} />
           </div>
           <div className="uk-card-body">
             <p id="category" className="uk-text-uppercase">
-              {article.category.name}
+              {article?.attributes?.category?.data?.attributes?.name}
             </p>
             <p id="title" className="uk-text-large">
-              {article.title}
+              {article?.attributes?.title}
             </p>
           </div>
         </div>

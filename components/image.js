@@ -1,6 +1,7 @@
 import { getStrapiMedia } from "../lib/media";
 
 const Image = ({ image, style }) => {
+  console.log({image})
   const imageUrl = getStrapiMedia(image);
 
   return (
