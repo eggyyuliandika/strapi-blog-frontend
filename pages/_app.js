@@ -1,7 +1,7 @@
 import App from "next/app";
 import Head from "next/head";
 import { createContext } from "react";
-// import { getStrapiMedia } from "../lib/media";
+import { getStrapiMedia } from "../lib/media";
 import { fetchAPI } from "../lib/api";
 
 // Store Strapi Global object in context
@@ -13,7 +13,12 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        {/* <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} /> */}
+        <link
+          rel="shortcut icon"
+          href={getStrapiMedia(
+            global?.data?.attributes?.favicon?.data?.attributes
+          )}
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Staatliches"
@@ -41,7 +46,7 @@ MyApp.getInitialProps = async (ctx) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi
-  const global = await fetchAPI("/global");
+  const global = await fetchAPI("/global?populate=*");
   // Pass the data to our page via props
   return { ...appProps, pageProps: { global } };
 };
