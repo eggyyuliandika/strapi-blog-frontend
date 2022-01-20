@@ -10,7 +10,7 @@ const Home = ({ articles, categories, homepage }) => {
       <Seo seo={homepage.seo} />
       <div className="uk-section">
         <div className="uk-container uk-container-large">
-          <h1>{homepage.hero.title}</h1>
+          <h1>{homepage?.hero?.title}</h1>
           <Articles articles={articles} />
         </div>
       </div>
