@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./card";
 
 const Articles = (props) => {
+  
   const { articles } = props
   // console.log({articles})
   const leftArticlesCount = Math.ceil(articles?.data?.length / 5);
@@ -15,19 +16,20 @@ const Articles = (props) => {
           {leftArticles.map((article, i) => {
             return (
               <Card article={article} key={`article__left__${article?.attributes?.slug}`} />
-            );
+              
+              );
           })}
         </div>
         <div>
           <div className="uk-child-width-1-2@m uk-grid-match" data-uk-grid>
-            {/* {rightArticles.map((article, i) => {
+            {rightArticles.map((article, i) => {
               return (
                 <Card
                   article={article}
                   key={`article__left__${article.slug}`}
                 />
               );
-            })} */}
+            })}
           </div>
         </div>
       </div>

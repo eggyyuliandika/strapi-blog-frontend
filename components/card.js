@@ -4,6 +4,7 @@ import Image from "./image";
 
 const Card = (props) => {
   const {article} = props
+  console.log(article)
   return (
     <Link as={`/article/${article?.attributes?.slug}`} href="/article/[id]">
       <a className="uk-link-reset">
@@ -20,6 +21,7 @@ const Card = (props) => {
             </p>
           </div>
         </div>
+        
       </a>
     </Link>
   );
