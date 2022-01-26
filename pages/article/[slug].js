@@ -66,9 +66,9 @@ const Article = ({ article, categories }) => {
 export async function getStaticPaths() {
   const articles = await fetchAPI("/articles?/populate=*");
   return {
-    paths: articles.map((article) => ({
+    paths: articles.data.map((article) => ({
       params: {
-        slug: article?.data?.attributes?.slug,
+        slug: article?.attributes?.slug,
       },
     })),
     fallback: false,

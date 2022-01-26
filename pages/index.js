@@ -5,7 +5,7 @@ import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
 
 const Home = ({ articles, categories, homepage }) => {
-  console.log({articles})
+  console.log(typeof(articles.data));
   return (
     <Layout categories={categories}>
       <Seo seo={homepage?.data?.attributes?.seo} />
