@@ -4,9 +4,10 @@ import Image from "./image";
 
 const Card = (props) => {
   const {article} = props
-  console.log(article)
+  // console.log(article)
   return (
-    <Link as={`/article/${article?.attributes?.slug}`} href="/article/[id]">
+    // <></>
+    <Link as={`/article/${article?.attributes?.slug}`} href={`/article/${article?.attributes?.slug}`}>
       <a className="uk-link-reset">
         <div className="uk-card uk-card-muted">
           <div className="uk-card-media-top">

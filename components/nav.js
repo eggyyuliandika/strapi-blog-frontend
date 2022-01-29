@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
 
-const Nav = ({ categories }) => {
+const Nav = (props) => {
+  const {categories} = props
+  console.log(categories.data);
   return (
     <div>
       <nav className="uk-navbar-container" data-uk-navbar>
@@ -16,15 +18,15 @@ const Nav = ({ categories }) => {
         </div>
         <div className="uk-navbar-right">
           <ul className="uk-navbar-nav">
-            {/* {categories.map((category) => {
+            {categories.data.map((category) => {
               return (
                 <li key={category.id}>
-                  <Link as={`/category/${category.slug}`} href="/category/[id]">
-                    <a className="uk-link-reset">{category.name}</a>
+                  <Link as={`/category/${category?.attributes?.slug}`} href={`/category/${category?.attributes?.slug}`}> 
+                    <a className="uk-link-reset">Halo{categories.data?.attributes?.name}</a>
                   </Link>
-                </li>
-              );
-            })} */}
+                 </li>
+               );
+             })}
           </ul>
         </div>
       </nav>
