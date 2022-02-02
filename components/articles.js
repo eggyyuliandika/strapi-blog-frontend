@@ -10,7 +10,7 @@ const Articles = (props) => {
 
   return (
     <div>
-      {/* <div className="uk-child-width-1-2@s" data-uk-grid="true">
+      <div className="uk-child-width-1-2@s" data-uk-grid="true">
         <div>
           {leftArticles.map((article, i) => {
             return (
@@ -24,12 +24,12 @@ const Articles = (props) => {
             {rightArticles.map((article, i) => {
               return (
                 <Card
-                  article={article} key={`article__right__${article?.attibutes?.slug}`}/>
+                  article={article} key={`article__left__${article?.attibutes?.slug}`}/>
               );
             })}
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
