@@ -2,11 +2,13 @@ import React from "react";
 import Card from "./card";
 
 const Articles = (props) => {
-  
-  const { articles } = props
+  const { articles } = props;
   const leftArticlesCount = Math.ceil(articles?.data?.length / 5);
   const leftArticles = articles?.data?.slice(0, leftArticlesCount);
-  const rightArticles = articles?.data?.slice(leftArticlesCount, articles.length);
+  const rightArticles = articles?.data?.slice(
+    leftArticlesCount,
+    articles.length
+  );
 
   return (
     <div>
@@ -14,9 +16,11 @@ const Articles = (props) => {
         <div>
           {leftArticles.map((article, i) => {
             return (
-              <Card article={article} key={`article__left__${article?.attributes?.slug}`} />
-              
-              );
+              <Card
+                article={article}
+                key={`article__left__${article?.attributes?.slug}`}
+              />
+            );
           })}
         </div>
         <div>
@@ -24,7 +28,9 @@ const Articles = (props) => {
             {rightArticles.map((article, i) => {
               return (
                 <Card
-                  article={article} key={`article__left__${article?.attibutes?.slug}`}/>
+                  article={article}
+                  key={`article__left__${article?.attibutes?.slug}`}
+                />
               );
             })}
           </div>
