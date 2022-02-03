@@ -3,6 +3,7 @@ import Link from "next/link";
 
 const Nav = (props) => {
   const { categories } = props; // 
+  console.log (categories)
   // console.log(categories.data);
   return (
     <div>

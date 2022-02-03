@@ -23,7 +23,7 @@ const Article = (props) => {
   // };
 
   return (
-    <Layout categories={categories}>
+    <Layout categories={category.attributes?.name}>
       {/* <Seo seo={seo} /> */}
       <div
         id="banner"
