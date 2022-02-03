@@ -3,11 +3,12 @@ import Link from "next/link";
 import Image from "./image";
 
 const Card = (props) => {
-  const {article} = props
-  // console.log(article)
+  const { article } = props;
   return (
-    // <></>
-    <Link as={`/article/${article?.attributes?.slug}`} href={`/article/${article?.attributes?.slug}`}>
+    <Link
+      as={`/article/${article?.attributes?.slug}`}
+      href={`/article/${article?.attributes?.slug}`}
+    >
       <a className="uk-link-reset">
         <div className="uk-card uk-card-muted">
           <div className="uk-card-media-top">
@@ -22,7 +23,6 @@ const Card = (props) => {
             </p>
           </div>
         </div>
-        
       </a>
     </Link>
   );
